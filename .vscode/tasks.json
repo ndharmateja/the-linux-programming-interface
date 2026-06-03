@@ -14,7 +14,7 @@
                 "${workspaceFolder}/code/include/get_num.c",
                 "-I${workspaceFolder}/code/include",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/a.out"
             ],
             "options": {
                 "cwd": "${fileDirname}"
