@@ -47,7 +47,7 @@ int main(int argc, const char *argv[])
     // until we reach the end or encounter an error
     while ((num_read = read(input_fd, buf, BUF_SIZE)) > 0)
         if (write(output_fd, buf, num_read) != num_read)
-            fatal("couldn't write whole buffer");
+            fatal("write() returned error or a partial write occurred");
     if (num_read == -1)
         errExit("read");
 
