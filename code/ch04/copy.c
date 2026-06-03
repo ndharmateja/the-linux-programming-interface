@@ -31,6 +31,10 @@ int main(int argc, const char *argv[])
         errExit("opening file %s", argv[1]);
 
     // Open output file with rw-rw-rw- permissions
+    // If we don't use O_TRUNC and the file already exists, then anything
+    // we write will be overwrite the existing bytes from the start of the file
+    // If we use O_TRUNC, then file will be truncated to 0 bytes after
+    // it gets opened (if it already exists)
     open_flags = O_CREAT | O_WRONLY | O_TRUNC;
     file_permissions = S_IRUSR | S_IWUSR |
                        S_IRGRP | S_IWGRP |
