@@ -15,4 +15,4 @@ RUN apt-get update && apt-get install -y \
 RUN yes | unminimize
 
 # Append a beautiful, clean minimalist prompt structure to the global Zsh configuration
-RUN echo 'PROMPT="%F{cyan}%~%f %F{green}%(?..)%f "' >> /etc/zsh/zshrc
+RUN echo 'PROMPT="%F{cyan}%~%f %F{green}%(?..)%f\n"' >> /etc/zsh/zshrc
