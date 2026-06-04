@@ -2,6 +2,17 @@
 #include <fcntl.h>
 
 /**
+ * Usage:
+ * ./copy <oldfile> <newfile>
+ *
+ * Eg:
+ * ./copy test test.old         // Copy a regular file
+ * ./copy a.txt /dev/tty        // Copy a regular file to *this* terminal
+ * ./copy /dev/tty b.txt        // Copy input from *this* terminal to a regular file
+ * ./copy /dev/pts/16 /dev/tty  // Copy input from another terminal
+ */
+
+/**
  * We are using ifndef to allow override BUF_SIZE definition
  * using the cc -D option while compiling
  */
