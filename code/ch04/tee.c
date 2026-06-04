@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     int output_fd, flags;
     mode_t file_permissions;
     char buf[BUF_SIZE];
-    ssize_t num_read, num_written;
+    ssize_t num_read;
     bool to_append = false;
 
     // Validate args
