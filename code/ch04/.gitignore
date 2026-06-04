@@ -3,3 +3,4 @@ copy_with_holes
 seek_io
 tfile*
 hole
+tee
