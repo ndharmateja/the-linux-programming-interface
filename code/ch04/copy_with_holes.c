@@ -2,6 +2,10 @@
 #include <fcntl.h>
 
 /**
+ * Exercise 2
+ */
+
+/**
  * Usage:
  * ./copy <oldfile> <newfile>
  *
