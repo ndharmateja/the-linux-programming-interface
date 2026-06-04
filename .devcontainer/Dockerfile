@@ -14,4 +14,4 @@ RUN apt-get update && apt-get install -y \
 
 RUN yes | unminimize
 
-RUN echo 'PROMPT="%F{cyan}%~%f %(?.%F{green}✓%f.%F{red}✗%f)\n$ "' >> /etc/zsh/zshrc
+RUN echo 'PROMPT="%F{cyan}%~%f %(?.%F{green}✓%f.%F{red}✗%f)\n$ "' >> /root/.zshrc
