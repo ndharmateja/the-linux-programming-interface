@@ -85,9 +85,9 @@ int main(int argc, const char *argv[])
 
             // At this point [pos, end) is a stretch of non-null bytes block
             // of length 'end - start'
-            // We can write buf[pos:end] (pythong style slice) this to the file
+            // We can write buf[pos:end] (python style slice) this to the file
             // end could be equal to pos in which case nothing to write
-            // To write the buf starting at index pos, we can use "buf + pos" or "$buf[pos]"
+            // To write the buf starting at index pos, we can use "buf + pos" or "&buf[pos]"
             count = end - pos;
             if (count)
                 if (write(output_fd, buf + pos, count) != count)

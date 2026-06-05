@@ -32,8 +32,9 @@ int main(int argc, char *argv[])
     // The last arg is the filename
     // We use the flags O_WRONLY and O_CREAT
     // If the -a flag is given to our program, we need to append
-    // to the file instead, so we have to use the O_APPEND flag instead
-    // of the O_TRUNC as the third flag n
+    // to the file instead, so we have to use the O_APPEND flag
+    // If the -a flag is not given, we use the O_TRUNC so as to write to the file
+    // from the beginning
     flags = O_WRONLY | O_CREAT;
     flags |= to_append ? O_APPEND : O_TRUNC;
     file_permissions = S_IRUSR | S_IWUSR |
