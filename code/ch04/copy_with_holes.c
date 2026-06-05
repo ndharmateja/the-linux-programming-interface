@@ -74,7 +74,8 @@ int main(int argc, const char *argv[])
         // Write the continuous stretch of non-null bytes block starting at pos to the file
         // and skip the continuous stretch of null bytes block by using lseek()
         // in one iteration
-        int pos = 0, end, count;
+        int pos = 0, end;
+        size_t count;
         while (pos < num_read)
         {
             // Write all the non-null bytes starting at pos
@@ -107,9 +108,8 @@ int main(int argc, const char *argv[])
             // so we don't need to actually write these bytes, we just need to move the
             // offset of the file by the number of null bytes
             count = end - pos;
-            if (count)
-                if (lseek(output_fd, (off_t)count, SEEK_CUR) == -1)
-                    errExit("lseek");
+            if (count && lseek(output_fd, (off_t)count, SEEK_CUR) == -1)
+                errExit("lseek");
 
             // Update pos for the next iteration
             pos = end;
